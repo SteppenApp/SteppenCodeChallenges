@@ -4,5 +4,5 @@ Our code challenges for developers considering joining the team, so we understan
 
 ## Challenges
 
-* [Verify Input Value - Basic JavaScript](/blob/main/verify-input-value)
-* [Transform Object - Basic JavaScript](/blob/main/transform-object)
+* [Verify Input Value - Basic JavaScript](https://github.com/SteppenApp/SteppenCodeChallenges/blob/main/verify-input-value)
+* [Transform Object - Basic JavaScript](https://github.com/SteppenApp/SteppenCodeChallenges/blob/main/transform-object)
