@@ -15,6 +15,12 @@ Our code challenges for developers considering joining the team, so we understan
 - It’s not necessary to write and submit tests for this code. However, if you’re more comfortable with test-driven development then feel free to do so.
 - If the task has UI then please make that look good to the best of your ability. You’re not being hired as a designer, but in practice there are often times that developers have to tweak designs to improve them, so generally it’s good if you feel comfortable coming up with something.
 
+## Way of Working
+
+- Fork this repo on GitHub.
+- Check the individual directories for each task you're doing for specific instructions.
+- Once finished, point us to your fork and tell us which challenges you're submitting.
+
 ## Challenges
 
 * [Verify Input Value - Basic JavaScript](https://github.com/SteppenApp/SteppenCodeChallenges/blob/main/verify-input-value)
