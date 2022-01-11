@@ -7,7 +7,7 @@
       //
       // TODO: Implement this function.
       //
-      const verifyInputValue = () => {
+      const makeInputVerifier = () => {
         return () => {}
       }
     </script>
@@ -17,7 +17,26 @@
     <section class="section">
       <div class="box">
         <h1 class="title">Verify Input Value</h1>
-        <p>Open this file and implement the function <code>verifyInputValue()</code>.</p>
+        <p>Open this file and implement the function <code>makeInputVerifier()</code>.</p>
+      </div>
+
+      <h3 class="title is-4">Task</h3>
+      <div class="content">
+        <p>Implement the function <code>makeInputVerifier</code> such that:</p>
+        <ul>
+          <li>It takes 2 integer arguments, <code>minimum</code> and <code>maximum</code>.</li>
+          <li>It returns a new function (let’s call it <code>verify</code>).</li>
+          <li>The function <code>verify</code> takes a single integer argument, <code>inputValue</code>, and returns:</li>
+          <ul>
+            <li>If <code>inputValue</code> is less than <code>minimum</code>, it returns "Input is less than minimum value".</li>
+            <li>If <code>inputValue</code> is greater than or equal to <code>minimum</code> and less than or equal to <code>maximum</code>, it returns "Input is in range".</li>
+            <li>If <code>inputValue</code> is greater than <code>maximum</code>, it returns "Input is more than maximum value".</li>
+          </ul>
+        </ul>
+        <p>Constraints that your code should check:</p>
+        <ul>
+          <li><code>minimum</code> <= <code>maximum</code></li>
+        </ul>
       </div>
 
       <h3 class="title is-4">Tests</h3>
@@ -90,7 +109,7 @@
         const input = parseInt(row.children[3].innerText)
         const expectedOutput = row.children[4].innerText
 
-        const verify = verifyInputValue(minimum, maximum)
+        const verify = makeInputVerifier(minimum, maximum)
 
         const actualOutput = typeof verify === "function" ? verify(input) : verify
         row.children[5].innerText = actualOutput
