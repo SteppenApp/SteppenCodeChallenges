@@ -1,4 +1,4 @@
-# Movie Titles List - Basic JavaScript
+# Movie Titles List - Basic JavaScript + API
 
 The framework for this challenge is in `main.html`.
 

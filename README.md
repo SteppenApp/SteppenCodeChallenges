@@ -25,3 +25,4 @@ Our code challenges for developers considering joining the team, so we understan
 
 * [Verify Input Value - Basic JavaScript](https://github.com/SteppenApp/SteppenCodeChallenges/blob/main/verify-input-value)
 * [Transform Object - Basic JavaScript](https://github.com/SteppenApp/SteppenCodeChallenges/blob/main/transform-object)
+* [Movie Titles List - Basic JavaScript + API](https://github.com/SteppenApp/SteppenCodeChallenges/blob/main/movie-titles-list)
