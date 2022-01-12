@@ -29,4 +29,4 @@ Our code challenges for developers considering joining the team, so we understan
 * [Average Order Value - Basic SQL](https://github.com/SteppenApp/SteppenCodeChallenges/blob/main/average-order-value)
 * [Two-Pane List with Detail - Basic React](https://github.com/SteppenApp/SteppenCodeChallenges/blob/main/two-pane-list)
 * [Top Customers - Intermediate SQL](https://github.com/SteppenApp/SteppenCodeChallenges/blob/main/top-customers)
-* [Item List with Add, Edit, and Remove - Intermediate React](https://github.com/SteppenApp/SteppenCodeChallenges/blob/main/item-list)
+* [Item List with Add, Edit, and Remove - Intermediate React](https://github.com/SteppenApp/SteppenCodeChallenges/blob/main/item-list-with-features)
