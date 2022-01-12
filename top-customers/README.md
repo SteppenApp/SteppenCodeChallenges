@@ -1,3 +1,5 @@
+# Top Customers - Intermediate SQL
+
 **Schema**
 
 `customers` table:

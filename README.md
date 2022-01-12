@@ -27,4 +27,5 @@ Our code challenges for developers considering joining the team, so we understan
 * [Transform Object - Basic JavaScript](https://github.com/SteppenApp/SteppenCodeChallenges/blob/main/transform-object)
 * [Movie Titles List - Basic JavaScript + API](https://github.com/SteppenApp/SteppenCodeChallenges/blob/main/movie-titles-list)
 * [Average Order Value - Basic SQL](https://github.com/SteppenApp/SteppenCodeChallenges/blob/main/average-order-value)
+* [Two-Pane List with Detail - Basic React](https://github.com/SteppenApp/SteppenCodeChallenges/blob/main/two-pane-list)
 * [Top Customers - Intermediate SQL](https://github.com/SteppenApp/SteppenCodeChallenges/blob/main/top-customers)

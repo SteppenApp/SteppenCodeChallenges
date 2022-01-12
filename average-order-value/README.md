@@ -1,3 +1,5 @@
+# Average Order Value - Basic SQL
+
 **Schema**
 
 `customers` table:
