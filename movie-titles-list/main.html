@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script>
+      //
+      // TODO: Implement this function.
+      //
+      const getMovieList = () => {}
+    </script>
+  </head>
+
+  <body>
+    <section class="section">
+      <div class="box">
+        <h1 class="title">Movie Titles List</h1>
+        <p>Open this file and implement the function <code>getMovieList()</code>.</p>
+      </div>
+
+      <h3 class="title is-4">API</h3>
+      <div class="content">
+        <p><strong>endpoint</strong>: <code>https://jsonmock.hackerrank.com/api/movies</code></p>
+        <p><strong>parameters</strong>:</p>
+        <ul>
+          <li><code>Year</code>: a four digit year</li>
+        </ul>
+        <p><strong>output</strong>:</p>
+        <ul>
+          <li><code>page</code>: the current page of the results</li>
+          <li><code>per_page</code>: the maximum number of results returned per page</li>
+          <li><code>total</code>: the total number of results</li>
+          <li><code>total_pages</code>: the total number of pages with results</li>
+          <li><code>data</code>: a JSON array of objects with the format</li>
+          <ul>
+            <li><code>Title</code>: Movie title</li>
+            <li><code>Year</code>: Movie year (same as the year that was queried)</li>
+            <li><code>imdbID</code>: Movie ID</li>
+          </ul>
+        </ul>
+      </div>
+
+      <h3 class="title is-4">Task</h3>
+      <div class="content">
+        <p>Write a function <code>getMovieList</code> which takes a single parameter:<p>
+        <ul>
+          <li><code>year: int</code> - the year number you need data for</li>
+        </ul>
+        <p>The function should return:<p>
+        <ul>
+          <li>A Promise that resolves with an array of titles (only) for the year, sorted alphabetically.</li>
+          <li>If there are no results for that year, it resolves with an empty array.</li>
+          <li>Only the first (default) page of data is required.</li>
+        </ul>
+      </div>
+
+      <h3 class="title is-4">Tests</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>year</th>
+            <th>expected output</th>
+            <th>actual output</th>
+            <th>result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="test-row">
+            <td>2012</td>
+            <td>
+<code style="white-space: pre">Ain't It Cool with Harry Knowles
+Amazing Spiderman Syndrome
+Boundless Maze
+Creating the World of Harry Potter, Part 8: Growing Up
+Harry Dean Stanton: Partly Fiction
+Harry Potter and the Ten Years Later
+Ironman Triathlon Special
+Maze
+The Amazing Spiderman T4 Premiere Special
+The Road to Ironman</code>
+            </td>
+            <td><code style="white-space: pre"></code></td>
+            <td></td>
+          </tr>
+          <tr class="test-row">
+            <td>2013</td>
+            <td>
+<code style="white-space: pre">Aquaman: The Teen Drama
+Harry
+Harry nervt
+Harry's Metaphysical Day Off
+Ironman World Championship
+Maze King
+October Swim with Aquaman
+Parallel Maze
+The Harry Hill Movie
+The Maze</code>
+            </td>
+            <td><code style="white-space: pre"></code></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <script>
+      Array.prototype.forEach.call(document.getElementsByClassName("test-row"), row => {
+        const year = parseInt(row.children[0].innerText)
+        const expectedOutput = row.children[1].innerText
+
+        getMovieList(year).then(actualOutput => {
+          const actualOutputString = actualOutput.join("\n")
+          row.children[2].children[0].innerText = actualOutputString
+
+          if (expectedOutput === actualOutputString) {
+            row.children[3].innerText = "RIGHT"
+            row.children[3].style.color = "green"
+            row.children[3].style.fontWeight = "600"
+          } else {
+            row.children[3].innerText = "WRONG"
+            row.children[3].style.backgroundColor = "red"
+          }
+        })
+      })
+    </script>
+  </body>
+</html>
