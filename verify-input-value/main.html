@@ -1,128 +1,174 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <script>
-      //
-      // TODO: Implement this function.
-      //
-      const makeInputVerifier = () => {
-        return () => {}
-      }
-    </script>
-  </head>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+        />
+        <script>
+            //
+            // TODO: Implement this function.
+            //
+            const makeInputVerifier = (minimum, maximum) => {
+                return (inputValue) => {
+                    if (maximum < minimum) {
+                        return 'ERROR';
+                    }
+                    if (inputValue < minimum) {
+                        return 'Input is less than minimum value';
+                    }
+                    if (inputValue > maximum) {
+                        return 'Input is more than maximum value';
+                    }
+                    return 'Input is in range';
+                };
+            };
+        </script>
+    </head>
 
-  <body>
-    <section class="section">
-      <div class="box">
-        <h1 class="title">Verify Input Value</h1>
-        <p>Open this file and implement the function <code>makeInputVerifier()</code>.</p>
-      </div>
+    <body>
+        <section class="section">
+            <div class="box">
+                <h1 class="title">Verify Input Value</h1>
+                <p>
+                    Open this file and implement the function
+                    <code>makeInputVerifier()</code>.
+                </p>
+            </div>
 
-      <h3 class="title is-4">Task</h3>
-      <div class="content">
-        <p>Implement the function <code>makeInputVerifier</code> such that:</p>
-        <ul>
-          <li>It takes 2 integer arguments, <code>minimum</code> and <code>maximum</code>.</li>
-          <li>It returns a new function (let’s call it <code>verify</code>).</li>
-          <li>The function <code>verify</code> takes a single integer argument, <code>inputValue</code>, and returns:</li>
-          <ul>
-            <li>If <code>inputValue</code> is less than <code>minimum</code>, it returns "Input is less than minimum value".</li>
-            <li>If <code>inputValue</code> is greater than or equal to <code>minimum</code> and less than or equal to <code>maximum</code>, it returns "Input is in range".</li>
-            <li>If <code>inputValue</code> is greater than <code>maximum</code>, it returns "Input is more than maximum value".</li>
-          </ul>
-        </ul>
-        <p>Constraints that your code should check:</p>
-        <ul>
-          <li><code>minimum</code> <= <code>maximum</code></li>
-        </ul>
-      </div>
+            <h3 class="title is-4">Task</h3>
+            <div class="content">
+                <p>
+                    Implement the function <code>makeInputVerifier</code>
+                    such that:
+                </p>
+                <ul>
+                    <li>
+                        It takes 2 integer arguments, <code>minimum</code> and
+                        <code>maximum</code>.
+                    </li>
+                    <li>
+                        It returns a new function (let’s call it
+                        <code>verify</code>).
+                    </li>
+                    <li>
+                        The function <code>verify</code> takes a single integer
+                        argument, <code>inputValue</code>, and returns:
+                    </li>
+                    <ul>
+                        <li>
+                            If <code>inputValue</code> is less than
+                            <code>minimum</code>, it returns "Input is less than
+                            minimum value".
+                        </li>
+                        <li>
+                            If <code>inputValue</code> is greater than or
+                            equal to <code>minimum</code> and less than or equal
+                            to <code>maximum</code>, it returns "Input is in
+                            range".
+                        </li>
+                        <li>
+                            If <code>inputValue</code> is greater than
+                            <code>maximum</code>, it returns "Input is more than
+                            maximum value".
+                        </li>
+                    </ul>
+                </ul>
+                <p>Constraints that your code should check:</p>
+                <ul>
+                    <li><code>minimum</code> <= <code>maximum</code></li>
+                </ul>
+            </div>
 
-      <h3 class="title is-4">Tests</h3>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>minimum</th>
-            <th>maximum</th>
-            <th>input value</th>
-            <th>expected output</th>
-            <th>actual output</th>
-            <th>result</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="test-row">
-            <td>1</td>
-            <td>10</td>
-            <td>20</td>
-            <td>15</td>
-            <td>Input is in range</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="test-row">
-            <td>2</td>
-            <td>10</td>
-            <td>200</td>
-            <td>200</td>
-            <td>Input is in range</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="test-row">
-            <td>3</td>
-            <td>20</td>
-            <td>200</td>
-            <td>5</td>
-            <td>Input is less than minimum value</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="test-row">
-            <td>4</td>
-            <td>-5</td>
-            <td>10</td>
-            <td>25</td>
-            <td>Input is more than maximum value</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr class="test-row">
-            <td>5</td>
-            <td>20</td>
-            <td>19</td>
-            <td>25</td>
-            <td>ERROR</td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+            <h3 class="title is-4">Tests</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>minimum</th>
+                        <th>maximum</th>
+                        <th>input value</th>
+                        <th>expected output</th>
+                        <th>actual output</th>
+                        <th>result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="test-row">
+                        <td>1</td>
+                        <td>10</td>
+                        <td>20</td>
+                        <td>15</td>
+                        <td>Input is in range</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="test-row">
+                        <td>2</td>
+                        <td>10</td>
+                        <td>200</td>
+                        <td>200</td>
+                        <td>Input is in range</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="test-row">
+                        <td>3</td>
+                        <td>20</td>
+                        <td>200</td>
+                        <td>5</td>
+                        <td>Input is less than minimum value</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="test-row">
+                        <td>4</td>
+                        <td>-5</td>
+                        <td>10</td>
+                        <td>25</td>
+                        <td>Input is more than maximum value</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="test-row">
+                        <td>5</td>
+                        <td>20</td>
+                        <td>19</td>
+                        <td>25</td>
+                        <td>ERROR</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-    <script>
-      Array.prototype.forEach.call(document.getElementsByClassName("test-row"), row => {
-        const minimum = parseInt(row.children[1].innerText)
-        const maximum = parseInt(row.children[2].innerText)
-        const input = parseInt(row.children[3].innerText)
-        const expectedOutput = row.children[4].innerText
+        <script>
+            Array.prototype.forEach.call(
+                document.getElementsByClassName('test-row'),
+                (row) => {
+                    const minimum = parseInt(row.children[1].innerText);
+                    const maximum = parseInt(row.children[2].innerText);
+                    const input = parseInt(row.children[3].innerText);
+                    const expectedOutput = row.children[4].innerText;
 
-        const verify = makeInputVerifier(minimum, maximum)
+                    const verify = makeInputVerifier(minimum, maximum);
 
-        const actualOutput = typeof verify === "function" ? verify(input) : verify
-        row.children[5].innerText = actualOutput
+                    const actualOutput =
+                        typeof verify === 'function' ? verify(input) : verify;
+                    row.children[5].innerText = actualOutput;
 
-        if (expectedOutput === actualOutput) {
-          row.children[6].innerText = "RIGHT"
-          row.children[6].style.color = "green"
-          row.children[6].style.fontWeight = "600"
-        } else {
-          row.children[6].innerText = "WRONG"
-          row.children[6].style.backgroundColor = "red"
-        }
-      })
-    </script>
-  </body>
+                    if (expectedOutput === actualOutput) {
+                        row.children[6].innerText = 'RIGHT';
+                        row.children[6].style.color = 'green';
+                        row.children[6].style.fontWeight = '600';
+                    } else {
+                        row.children[6].innerText = 'WRONG';
+                        row.children[6].style.backgroundColor = 'red';
+                    }
+                }
+            );
+        </script>
+    </body>
 </html>
