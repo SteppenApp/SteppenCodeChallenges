@@ -1,10 +1,20 @@
 import ItemListHooks from './pages/ItemListHooks';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import 'bulma/css/bulma.min.css';
 
 function App() {
   return (
     <section className="section">
+      <ToastContainer
+        position="top-right"
+        autoClose={2500}
+        hideProgressBar={false}
+        closeOnClick={true}
+        pauseOnHover={true}
+        draggable={true}
+      />
       <div className="box">
         <h1 className="title">Item List with Add, Edit and Remove</h1>
         <p>
