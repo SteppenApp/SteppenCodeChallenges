@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CreateItem from './CreateItem';
 import UpdateItem from './UpdateItem';
-import Items from './table';
+import Items from './ItemTable';
 import { v1 as uuidv1 } from 'uuid';
 import { toast } from 'react-toastify';
 
