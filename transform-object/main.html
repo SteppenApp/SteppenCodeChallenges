@@ -7,7 +7,27 @@
       //
       // TODO: Implement this function.
       //
-      const transformObject = () => {}
+      const transformObject = (obj) => {
+        let result = {};
+        for (const prop in obj) {
+          const value = obj[prop];
+          if (Array.isArray(value)) {
+            result[prop] = Object.values(transformObject(value));
+          }
+          else if (typeof (value) === "object") {
+            result[prop] = transformObject(value);
+          }
+          else if (typeof (value) === "number") {
+            result[prop] = value + 6;
+          } else if (typeof (value) === "string") {
+            result[prop] = value + " BLARGH";
+          }
+          else {
+            console.log("any", typeof (obj[prop]), obj[prop])
+          }
+        }
+        return result;
+      }
     </script>
   </head>
 
