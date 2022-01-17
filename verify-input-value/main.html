@@ -7,8 +7,32 @@
       //
       // TODO: Implement this function.
       //
-      const makeInputVerifier = () => {
-        return () => {}
+      const makeInputVerifier = (minimum, maximum) => {
+        return verify = (inputValue) => {
+          // Declared an Arrow Function named verify which is taking inputValue as an argument.
+          
+          // Constraint as described in the instruction.
+          if(minimum <= maximum)
+          {
+              if(inputValue < minimum){
+                return "Input is less than minimum value";
+              }
+
+              else if(inputValue >= minimum && inputValue <= maximum){
+                  return  "Input is in range";
+              }
+            
+              else if(inputValue > maximum){
+                return "Input is more than maximum value";
+              }
+          }
+          
+          // Violating Constraint: if the minimum is NOT <= maximum
+          else{
+            return "ERROR";
+          }
+          
+        }
       }
     </script>
   </head>
@@ -22,15 +46,15 @@
 
       <h3 class="title is-4">Task</h3>
       <div class="content">
-        <p>Implement the function <code>makeInputVerifier</code> such that:</p>
+        <p>Implement the function <code>makeInputVerifier</code> such that:</p>
         <ul>
           <li>It takes 2 integer arguments, <code>minimum</code> and <code>maximum</code>.</li>
           <li>It returns a new function (let’s call it <code>verify</code>).</li>
-          <li>The function <code>verify</code> takes a single integer argument, <code>inputValue</code>, and returns:</li>
+          <li>The function <code>verify</code> takes a single integer argument, <code>inputValue</code>, and returns:</li>
           <ul>
-            <li>If <code>inputValue</code> is less than <code>minimum</code>, it returns "Input is less than minimum value".</li>
-            <li>If <code>inputValue</code> is greater than or equal to <code>minimum</code> and less than or equal to <code>maximum</code>, it returns "Input is in range".</li>
-            <li>If <code>inputValue</code> is greater than <code>maximum</code>, it returns "Input is more than maximum value".</li>
+            <li>If <code>inputValue</code> is less than <code>minimum</code>, it returns "Input is less than minimum value".</li>
+            <li>If <code>inputValue</code> is greater than or equal to <code>minimum</code> and less than or equal to <code>maximum</code>, it returns "Input is in range".</li>
+            <li>If <code>inputValue</code> is greater than <code>maximum</code>, it returns "Input is more than maximum value".</li>
           </ul>
         </ul>
         <p>Constraints that your code should check:</p>
