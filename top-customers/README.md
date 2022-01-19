@@ -48,7 +48,7 @@ Use `test_data.sql` to set up the schema and some test data.
 
 When run on that test data, you should get this result:
 
-| name | month | customer_id | total_monthly_order_value
+| year | month | customer_id | total_monthly_order_value
 | --- | --- | --- | ---
 | 1996 | 7 | 1 | 1842
 | 1996 | 8 | 3 | 529
