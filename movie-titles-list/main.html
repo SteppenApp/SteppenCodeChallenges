@@ -7,7 +7,21 @@
       //
       // TODO: Implement this function.
       //
-      const getMovieList = () => {}
+      const getMovieList = (year) => {
+          return fetch('https://jsonmock.hackerrank.com/api/movies').then(
+            resp => resp.json()
+          ).then(repos => {
+          let result = []
+          if(repos.page === 1) { 
+           for (const repo of repos.data) {
+              if(repo.Year == year) { result.push(repo.Title); }
+           }
+            result.sort();
+            return result;
+          } }).catch(ex => {
+            console.error(ex);
+          })
+        }
     </script>
   </head>
 
