@@ -1,64 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <script>
-      //
-      // TODO: Implement this function.
-      //
-      const transformObject = () => {}
-    </script>
-  </head>
 
-  <body>
-    <section class="section">
-      <div class="box">
-        <h1 class="title">Transform Object</h1>
-        <p>Open this file and implement the function <code>transformObject()</code>.</p>
-      </div>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <script>
+    const transformObject = (obj) => {
+      for (let key in obj) {
+        if (typeof obj[key] === 'number') {
+          obj[key] += 6;
+        } else if (typeof obj[key] === 'string') {
+          obj[key] += ' BLARGH';
+        } else if (typeof obj[key] === 'object') {
+          transformObject(obj[key]);
+        }
+      }
+      return obj;
+    }
+  </script>
+</head>
 
-      <h3 class="title is-4">Task</h3>
-      <div class="content">
-        <p>Write a function named <code>transformObject()</code> that takes an object with arbitrary nesting and transforms it according to these rules:</p>
-        <ul>
-          <li>Each number is incremented by 6.</li>
-          <li>Each string has “ BLARGH” concatenated onto it.</li>
-        </ul>
-        <p>The structure of the object should remain identical.</p>
-        <p>If the object has array members then each value in the array should be transformed.</p>
-      </div>
+<body>
+  <section class="section">
+    <div class="box">
+      <h1 class="title">Transform Object</h1>
+      <p>Open this file and implement the function <code>transformObject()</code>.</p>
+    </div>
 
-      <h3 class="title is-4">Test</h3>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>input value</th>
-            <th>expected output</th>
-            <th>actual output</th>
-            <th>result</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="test-row">
-            <td>
-<code style="white-space: pre">{
+    <h3 class="title is-4">Task</h3>
+    <div class="content">
+      <p>Write a function named <code>transformObject()</code> that takes an object with arbitrary nesting and
+        transforms it according to these rules:</p>
+      <ul>
+        <li>Each number is incremented by 6.</li>
+        <li>Each string has “ BLARGH” concatenated onto it.</li>
+      </ul>
+      <p>The structure of the object should remain identical.</p>
+      <p>If the object has array members then each value in the array should be transformed.</p>
+    </div>
+
+    <h3 class="title is-4">Test</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>input value</th>
+          <th>expected output</th>
+          <th>actual output</th>
+          <th>result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="test-row">
+          <td>
+            <code style="white-space: pre">{
   "a": 2,
   "b": "test"
 }</code>
-            </td>
-            <td>
-<code style="white-space: pre">{
+          </td>
+          <td>
+            <code style="white-space: pre">{
   "a": 8,
   "b": "test BLARGH"
 }</code>
-            </td>
-            <td><code style="white-space: pre"></code></td>
-            <td></td>
-          </tr>
-          <tr class="test-row">
-            <td>
-<code style="white-space: pre">{
+          </td>
+          <td><code style="white-space: pre"></code></td>
+          <td></td>
+        </tr>
+        <tr class="test-row">
+          <td>
+            <code style="white-space: pre">{
   "rat": 1829.45,
   "purple": [
     -7,
@@ -71,9 +81,9 @@
   },
   "q": "this is the q"
 }</code>
-            </td>
-            <td>
-<code style="white-space: pre">{
+          </td>
+          <td>
+            <code style="white-space: pre">{
   "rat": 1835.45,
   "purple": [
     -1,
@@ -86,32 +96,33 @@
   },
   "q": "this is the q BLARGH"
 }</code>
-            </td>
-            <td><code style="white-space: pre"></code></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+          </td>
+          <td><code style="white-space: pre"></code></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-    <script>
-      Array.prototype.forEach.call(document.getElementsByClassName("test-row"), row => {
-        const input = JSON.parse(row.children[0].innerText)
-        const expectedOutput = row.children[1].innerText
+  <script>
+    Array.prototype.forEach.call(document.getElementsByClassName("test-row"), row => {
+      const input = JSON.parse(row.children[0].innerText)
+      const expectedOutput = row.children[1].innerText
 
-        const actualOutput = transformObject(input)
-        const actualOutputString = JSON.stringify(actualOutput, null, 2)
-        row.children[2].children[0].innerText = actualOutputString
+      const actualOutput = transformObject(input)
+      const actualOutputString = JSON.stringify(actualOutput, null, 2)
+      row.children[2].children[0].innerText = actualOutputString
 
-        if (expectedOutput === actualOutputString) {
-          row.children[3].innerText = "RIGHT"
-          row.children[3].style.color = "green"
-          row.children[3].style.fontWeight = "600"
-        } else {
-          row.children[3].innerText = "WRONG"
-          row.children[3].style.backgroundColor = "red"
-        }
-      })
-    </script>
-  </body>
+      if (expectedOutput === actualOutputString) {
+        row.children[3].innerText = "RIGHT"
+        row.children[3].style.color = "green"
+        row.children[3].style.fontWeight = "600"
+      } else {
+        row.children[3].innerText = "WRONG"
+        row.children[3].style.backgroundColor = "red"
+      }
+    })
+  </script>
+</body>
+
 </html>
